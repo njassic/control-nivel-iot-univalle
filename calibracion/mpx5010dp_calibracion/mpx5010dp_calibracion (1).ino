@@ -1,7 +1,5 @@
 /*
  * Calibración de sensor de presión MPX5010DP
- * Compatible con Arduino UNO y ESP32
- * Materia: Control y Simulación de Procesos
  *
  * ================= MONTAJE =================
  * Arduino UNO:
@@ -9,7 +7,7 @@
  *   MPX5010DP pin 2 (GND)  -> GND
  *   MPX5010DP pin 3 (Vs)   -> 5V
  *
- * ESP32 (IMPORTANTE: el sensor entrega hasta 4.7 V y el ESP32 tolera 3.3 V):
+ * ESP32 
  *   MPX5010DP pin 3 (Vs)   -> VIN / 5V
  *   MPX5010DP pin 2 (GND)  -> GND
  *   MPX5010DP pin 1 (Vout) -> [R1 = 10k] -> nodo -> GPIO34
@@ -40,7 +38,7 @@
 
 #include <Arduino.h>
 
-// ---------------- Configuración según placa ----------------
+// configuracion 
 #if defined(ESP32)
   const uint8_t PIN_SENSOR = 34;      // GPIO34: ADC1, solo entrada (compatible con WiFi)
   const int     ADC_MAX    = 4095;    // ADC de 12 bits
